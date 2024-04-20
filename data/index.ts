@@ -1,7 +1,7 @@
 export const events = [
   {
     id: 1,
-    name: "John Smith",
+    name: "Women Crush Wednesday",
     createdAt: "24th June, 2022",
     amount: 1200,
   },
@@ -9,44 +9,44 @@ export const events = [
 
 export const tickets = [
   {
-    id: 1,
-    name: "John Smith",
+    id: "1",
+    name: "Women Crush Wednesday",
     createdAt: "24th June, 2022",
     amount: 1200,
   },
   {
-    id: 2,
-    name: "Lary Jones",
+    id: "2",
+    name: "Black HIstory Month",
     createdAt: "24th June, 2022",
     amount: 1200,
   },
   {
-    id: 3,
-    name: "John Smith",
+    id: "3",
+    name: "Women Crush Wednesday",
     createdAt: "24th June, 2022",
     amount: 1200,
   },
   {
-    id: 4,
-    name: "Mathew Grim",
+    id: "4",
+    name: "Jaz Music Festival",
     createdAt: "18th May, 2022",
     amount: 1200,
   },
   {
-    id: 5,
-    name: "Mathew Grim",
+    id: "5",
+    name: "Jaz Music Festival",
     createdAt: "18th May, 2022",
     amount: 1200,
   },
   {
-    id: 6,
-    name: "Mary Johnson",
+    id: "6",
+    name: "Black History Month",
     createdAt: "28th August, 2022",
     amount: 1200,
   },
   {
-    id: 7,
-    name: "Mary Johnson",
+    id: "7",
+    name: "Black History Month",
     createdAt: "28th August, 2022",
     amount: 1200,
   },

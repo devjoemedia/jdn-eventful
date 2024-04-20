@@ -1,14 +1,15 @@
 import { FontAwesome5, Ionicons, Octicons } from "@expo/vector-icons";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import React from "react";
-import { Image, Text, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 
 type TicketCardProps = {
   type?: "past" | "upcoming";
 };
 const TicketCard = ({ type }: TicketCardProps) => {
   return (
-    <Link replace href={"events/1"}>
+    <TouchableOpacity onPress={() => router.push("events/1")}>
+      {/* <Link replace href={"events/1"}> */}
       <View
         className={` p-1 flex-row my-2 bg-white shadow-sm shadow-black/20 ${
           type == "past" ? " opacity-40" : ""
@@ -48,7 +49,8 @@ const TicketCard = ({ type }: TicketCardProps) => {
           </View>
         </View>
       </View>
-    </Link>
+      {/* </Link> */}
+    </TouchableOpacity>
   );
 };
 

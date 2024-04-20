@@ -1,5 +1,5 @@
 export type Ticket = {
-  id: number;
+  id: string;
   createdAt: string;
   name: string;
   amount: number;
@@ -13,11 +13,13 @@ export type GroupedData = {
 // Group and sort Data
 // 1. Grouped (finished)
 // 2. sorting (pending)
-export const groupAndSortTickets = (data: Ticket[]): GroupedData[] => {
+export const groupAndSortTickets = (tickets: Ticket[]): GroupedData[] => {
+  if (!Array.isArray(tickets)) return [];
+
   const groupedDataObject: { [key: string]: Ticket[] } = {};
 
   // Grouping
-  for (const item of data) {
+  for (const item of tickets) {
     const groupName = item.createdAt;
 
     if (!groupedDataObject[groupName]) {
@@ -26,10 +28,18 @@ export const groupAndSortTickets = (data: Ticket[]): GroupedData[] => {
     groupedDataObject[groupName].push(item);
   }
 
-  // Sorting and creating result array
-  const result: GroupedData[] = Object.keys(groupedDataObject)
-    .sort()
-    .map((key) => ({ title: key, data: groupedDataObject[key] }));
+  // Creating result array
+  // const result: GroupedData[] = Object.keys(groupedDataObject).map((key) => ({
+  //   title: key,
+  //   data: groupedDataObject[key],
+  // }));
+  // Creating result array
+  const result: GroupedData[] = Object.entries(groupedDataObject).map(
+    ([key, value]) => ({
+      title: key,
+      data: value,
+    })
+  );
 
   return result;
 };
