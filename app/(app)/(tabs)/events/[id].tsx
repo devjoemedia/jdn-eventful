@@ -32,7 +32,7 @@ export default function Event() {
       <View className=' flex-1 h-[55%]'>
         <Image
           style={{ objectFit: "cover" }}
-          source={require("../../../assets/e1.jpeg")}
+          source={require("../../../../assets/e1.jpeg")}
           className=' relative w-full flex-1'
         />
       </View>
