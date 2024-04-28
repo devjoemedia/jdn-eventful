@@ -10,10 +10,14 @@ export default function Layout() {
   const { user, loading } = useSession();
 
   if (loading) {
-    return <Text style={{ flex: 1, justifyContent: "center", alignItems: 'center' }}>Loading...</Text>;
+    return (
+      <Text style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        Loading...
+      </Text>
+    );
   }
   if (!user) {
-    return router.push("/login");
+    return router.push("/main");
   }
 
   return (

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import * as SplashScreen from "expo-splash-screen";
 import { Text, View } from "react-native";
 import "../global.css";
+import { StatusBar } from "expo-status-bar";
 
 export default function Root() {
   const [isReady, setReady] = useState(false);
@@ -16,7 +17,12 @@ export default function Root() {
   }, []);
 
   if (!isReady) {
-    return <View style={{ flex: 1, backgroundColor: "#000" }} />;
+    return (
+      <View className=' flex-1 p-5 items-center justify-center bg-orange-600'>
+        <Text className=' text-7xl text-white font-extrabold'>EMaster</Text>
+        <StatusBar style='light' />
+      </View>
+    );
   }
 
   return (
