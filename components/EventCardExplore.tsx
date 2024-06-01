@@ -1,23 +1,20 @@
 import { EventType } from "@/types";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import React from "react";
-import { Image, Text, View } from "react-native";
+import { Image, Pressable, Text, View } from "react-native";
 
 type EventCardProps = {
   item: EventType;
 };
 
 const EventCardExplore = ({ item }: EventCardProps) => {
+  const router = useRouter();
+
   return (
-    <View className=' relative rounded-lg w-[50%] p-2'>
-      <Link href={"events/1"}>
-        <View className=' relative '>
-          <Image
-            source={item.src}
-            className=' object-contain w-[200px] h-[280px] rounded-lg'
-          />
-        </View>
-      </Link>
+    <View className=' w-[50%] m-1 rounded-lg '>
+      <Pressable onPress={() => router.navigate("/events/1")}>
+        <Image source={item.src} className='h-[280px] w-full object-contain' />
+      </Pressable>
       {/* <View className=' absolute px-4 pb-3 bg-red-500'>
         <Text className='text-md '>Dr. Joseph Nartey</Text>
         <Text className='text-md '>$100/hr</Text>

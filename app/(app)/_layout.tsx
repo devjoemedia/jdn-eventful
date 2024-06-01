@@ -1,4 +1,4 @@
-import { Redirect, Stack, useRouter } from "expo-router";
+import { Stack, useRouter } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import useSession from "@/hooks/useSession";
 import { Text } from "react-native";

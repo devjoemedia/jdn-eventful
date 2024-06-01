@@ -7,62 +7,58 @@ import { FlatList, Image, ScrollView, Text, View } from "react-native";
 
 export default function Home() {
   return (
-    <View style={{ flex: 1 }}>
-      <ScrollView
-        contentContainerStyle={{ flexGrow: 1, paddingBottom: 120 }}
-        className=' bg-[#f1f1f1] p-2 '
-      >
-        <View className=' flex rounded-xl mb-3 bg-orange-100 p-2 justify-between items-center flex-row w-full gap-2'>
-          <View className='    py-1 px-6'>
-            <Text className=' my-1 text-smp-2 font-bold text-slate-900'>
-              complete your profile to add event
-            </Text>
-          </View>
-
-          <Ionicons name='close' size={24} color='black' />
+    <ScrollView
+      contentContainerStyle={{ flexGrow: 1, paddingBottom: 120 }}
+      className=' bg-[#f1f1f1] p-2 '
+    >
+      <View className=' flex rounded-xl mb-3 bg-orange-100 p-2 justify-between items-center flex-row w-full gap-2'>
+        <View className='    py-1 px-6'>
+          <Text className=' my-1 text-smp-2 font-bold text-slate-900'>
+            complete your profile to add event
+          </Text>
         </View>
 
-        <Text className=' mb-3 text-2xl font-bold text-slate-500'>
-          Live now
-        </Text>
-        <FlatList
-          horizontal
-          contentContainerStyle={{ gap: 10 }}
-          data={upcommingData}
-          renderItem={({ item }) => <EventCardHorizontal item={item} />}
-          keyExtractor={(item) => item.id}
-        />
+        <Ionicons name='close' size={24} color='black' />
+      </View>
 
-        <Text className=' mb-3 text-2xl font-bold text-slate-500'>New</Text>
-        <FlatList
-          horizontal
-          contentContainerStyle={{ gap: 10 }}
-          data={upcommingData}
-          renderItem={({ item }) => <EventCardHorizontal item={item} />}
-          keyExtractor={(item) => item.id}
-        />
+      <Text className=' mb-3 text-2xl font-bold text-slate-500'>Live now</Text>
+      <FlatList
+        horizontal
+        contentContainerStyle={{ gap: 10 }}
+        data={upcommingData}
+        renderItem={({ item }) => <EventCardHorizontal item={item} />}
+        keyExtractor={(item) => item.id}
+      />
 
-        <Text className=' my-3 text-2xl font-bold text-slate-500'>
-          Up Comming
-        </Text>
-        <FlatList
-          horizontal
-          contentContainerStyle={{ gap: 10 }}
-          data={commingSoomData}
-          renderItem={({ item }) => <EventCardHorizontal item={item} />}
-          keyExtractor={(item) => item.id}
-        />
+      <Text className=' my-3 text-2xl font-bold text-slate-500'>
+        Up Comming
+      </Text>
+      <FlatList
+        horizontal
+        contentContainerStyle={{ gap: 10 }}
+        data={commingSoomData}
+        renderItem={({ item }) => <EventCardHorizontal item={item} />}
+        keyExtractor={(item) => item.id}
+      />
 
-        <Text className=' my-3 text-2xl font-bold text-slate-500'>Popular</Text>
-        <FlatList
-          horizontal
-          contentContainerStyle={{ gap: 15 }}
-          data={popularData}
-          renderItem={({ item }) => <EventCardVertical item={item} />}
-          keyExtractor={(item) => item.id}
-        />
-      </ScrollView>
-    </View>
+      <Text className=' mb-3 text-2xl font-bold text-slate-500'>New</Text>
+      <FlatList
+        horizontal
+        contentContainerStyle={{ gap: 10 }}
+        data={upcommingData}
+        renderItem={({ item }) => <EventCardHorizontal item={item} />}
+        keyExtractor={(item) => item.id}
+      />
+
+      <Text className=' my-3 text-2xl font-bold text-slate-500'>Popular</Text>
+      <FlatList
+        horizontal
+        contentContainerStyle={{ gap: 15 }}
+        data={popularData}
+        renderItem={({ item }) => <EventCardVertical item={item} />}
+        keyExtractor={(item) => item.id}
+      />
+    </ScrollView>
   );
 }
 const upcommingData = [

@@ -1,12 +1,13 @@
 import { AntDesign } from "@expo/vector-icons";
 import { Link } from "expo-router";
 import React from "react";
-import { SafeAreaView, StatusBar, Text, View } from "react-native";
+import { StatusBar, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const OnbaordingScreen = () => {
   return (
     <View className=' flex-1 bg-orange-600'>
-      <SafeAreaView className=' flex-1 '>
+      <SafeAreaView style={{ flex: 1 }} className=' flex-1 '>
         <View className='h-12 w-12 items-center mx-5 self-start justify-center bg-white  rounded-full'>
           <Link href={"/main"}>
             <AntDesign name='back' size={24} color='black' />

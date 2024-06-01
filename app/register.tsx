@@ -1,8 +1,9 @@
 import { Link, useRouter } from "expo-router";
 import React, { useState } from "react";
-import { Pressable, SafeAreaView, Text, TextInput, View } from "react-native";
+import { Pressable, Text, TextInput, View } from "react-native";
 import useSession from "@/hooks/useSession";
 import { AntDesign, FontAwesome, Ionicons } from "@expo/vector-icons";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const RegisterScreen = () => {
   const [username, setUsername] = useState<string>("");
@@ -17,38 +18,44 @@ const RegisterScreen = () => {
   }
 
   return (
-    <SafeAreaView className='flex-1 items-center justify-around bg-white px-5'>
+    <SafeAreaView
+      style={{ flex: 1 }}
+      className='flex-1 items-center justify-around bg-white px-5'
+    >
       <View className='h-12 w-12 items-center mx-5 self-start justify-center bg-orange-600  rounded-full'>
         <Link href={"/main"}>
           <AntDesign name='back' size={24} color='white' />
         </Link>
       </View>
-      <View className='flex-[0.7] items-center justify-center'>
-        <View className=' font-default flex-row'>
+      <View className='flex-1 w-full px-5 items-center justify-center'>
+        <View className=' font-default flex-row mb-10'>
           <Text className='text-orange-600 font-extrabold text-5xl'>Event</Text>
           <Text className='font-extrabold text-5xl'>Master</Text>
         </View>
+
+        <View className='w-full gap-5'>
+          <TextInput
+            placeholder='username'
+            value={username}
+            onChangeText={(text: string) => setUsername(text)}
+            className=' border-0 h-20 text-2xl bg-orange-50 px-4 py-5 rounded-lg'
+          />
+          <TextInput
+            placeholder='Email'
+            value={email}
+            onChangeText={(text) => setEmail(text)}
+            className=' border-0 h-20 text-2xl bg-orange-50 px-4 py-5 rounded-lg'
+          />
+          <TextInput
+            placeholder='Password'
+            value={password}
+            onChangeText={(value) => setPassword(email)}
+            className=' border-0 h-20 text-2xl bg-orange-50 px-4 py-5 rounded-lg'
+          />
+        </View>
       </View>
 
-      <View className='px-5 flex-[0.5] gap-5 w-full'>
-        <TextInput
-          placeholder='username'
-          value={username}
-          onChangeText={(text: string) => setUsername(text)}
-          className=' border border-slate-200 px-4 py-5 mx-3 rounded-lg'
-        />
-        <TextInput
-          placeholder='Email'
-          value={email}
-          onChangeText={(text) => setEmail(text)}
-          className=' border border-slate-200 px-4 py-5 mx-3 rounded-lg'
-        />
-        <TextInput
-          placeholder='Password'
-          value={password}
-          onChangeText={(value) => setPassword(email)}
-          className=' border border-slate-200 px-4 py-5 mx-3 rounded-lg'
-        />
+      <View className='px-5 flex-[0.1] mb-5 gap-5 w-full'>
         <Pressable
           onPress={async () => {
             router.push("onboarding");

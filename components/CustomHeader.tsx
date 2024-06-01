@@ -1,18 +1,20 @@
 import { AntDesign, Ionicons } from "@expo/vector-icons";
 import React from "react";
-import { Image, Pressable, SafeAreaView, Text, View } from "react-native";
+import { Image, Pressable, Text, View } from "react-native";
 import useSession from "@/hooks/useSession";
 import { useRouter } from "expo-router";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 const CustomHeader = () => {
   const { signOut, user } = useSession();
   const router = useRouter();
 
   return (
-    <View className=' bg-orange-200'>
+    // <SafeAreaProvider>
+    <View className=' bg-orange-200 w-full'>
       <SafeAreaView>
-        <View className=' flex flex-row pb-3 items-center justify-between px-3'>
-          <View className=' relative flex flex-row items-center justify-between'>
+        <View className='bg-orange-200  flex flex-row pb-3 items-center justify-between px-3'>
+          <View className=' flex flex-row items-center justify-between'>
             <Pressable onPress={() => router.push("(app)/(tabs)/profile")}>
               <Image
                 source={require("../assets/jdn.jpg")}
@@ -32,6 +34,7 @@ const CustomHeader = () => {
         </View>
       </SafeAreaView>
     </View>
+    // </SafeAreaProvider>
   );
 };
 
