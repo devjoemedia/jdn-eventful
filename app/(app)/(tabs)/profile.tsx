@@ -12,6 +12,24 @@ import { Image, Pressable, SafeAreaView, Text, View } from "react-native";
 export default function Settings() {
   return (
     <View>
+      <View className=' bg-orange-200 w-full'>
+        <SafeAreaView>
+          <View className='h-[220px] flex items-center justify-between w-full'>
+            <View className='ml-3 items-center'>
+              <Image
+                source={require("../../../assets/jdn.jpg")}
+                className=' w-[110px] h-[110px] rounded-full'
+              />
+              <Text className=' text-center font-semibold text-2xl mt-5'>
+                Hi, 👋✌️
+              </Text>
+              <Text className=' text-center font-bold text-3xl uppercase mt-2  '>
+                Joseph Nartey
+              </Text>
+            </View>
+          </View>
+        </SafeAreaView>
+      </View>
       <View className='space-y-3 gap-1 px-2 mt-1'>
         <Pressable
           onPress={() => null}

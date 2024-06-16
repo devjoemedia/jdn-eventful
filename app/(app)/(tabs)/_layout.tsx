@@ -1,6 +1,7 @@
 import CustomHeader from "@/components/CustomHeader";
 import CustomTabBar from "@/components/CustomTabBar";
 import {
+  Entypo,
   FontAwesome5,
   Ionicons,
   MaterialCommunityIcons,
@@ -57,9 +58,8 @@ export default function AppLayout() {
           // headerShown: false,
           header: (props: any) => <CustomHeader {...props} />,
           tabBarLabel: "Live Events",
-          tabBarIcon: () => (
-            <MaterialIcons name='live-tv' size={30} color='white' />
-          ),
+          // <MaterialIcons name='live-tv' size={30} color='white' />
+          tabBarIcon: () => <Entypo name='shop' size={24} color='black' />,
         }}
       />
       <Tabs.Screen
@@ -76,7 +76,8 @@ export default function AppLayout() {
       <Tabs.Screen
         name='profile'
         options={{
-          header: (props: any) => <CustomHeader {...props} />,
+          headerShown: false,
+          // header: (props: any) => <CustomHeader {...props} />,
           tabBarLabel: "Profile",
           tabBarIcon: () => (
             <FontAwesome5 name='user' size={24} color='black' />
